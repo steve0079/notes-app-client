@@ -13,6 +13,8 @@ import ResetPassword from "./containers/ResetPassword";
 import Settings from "./containers/Settings";
 import ChangePassword from "./containers/ChangePassword";
 import ChangeEmail from "./containers/ChangeEmail";
+import Billing from "./containers/Billing";
+
 
 export default ({ childProps }) =>
     <Switch>
@@ -23,9 +25,9 @@ export default ({ childProps }) =>
         <AuthenticatedRoute path="/notes/:id" exact component={Notes} props={childProps} />
         <UnauthenticatedRoute path="/login/reset" exact component={ResetPassword} props={childProps} />
         <AuthenticatedRoute path="/settings" exact component={Settings} props={childProps} />
+        <AuthenticatedRoute path="/billing" exact component={Billing} props={childProps} />
         <AuthenticatedRoute path="/settings/password" exact component={ChangePassword} props={childProps} />
         <AuthenticatedRoute path="/settings/email" exact component={ChangeEmail} props={childProps} />
-
         { /* Finally, catch all unmatched routes */}
         <Route component={NotFound} />
     </Switch>;
